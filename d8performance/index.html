@@ -177,38 +177,150 @@
 				<section>
 					<h2>Cache Invalidation</h2>
 					<ul>
-					  <li class="fragment">Cache Hit.</li>
-					  <li class="fragment">Cache Miss.</li>
-					  <li class="fragment">Hit Ratio.</li>
-					  <li class="fragment">Cache Bin.</li>
-					  <li class="fragment">Cache Invalidation.</li>
+					  <li class="fragment">In Drupal7 we used to invalidate way too much, thus reducing the Cache Hit Ratio</li>
+
+					  <li class="fragment">By default Drupal7 used to clear all entries from Page Cache Table when any node was edited.</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2> Drupal7 Most scary function</h2>
+					<pre><code class="php" data-trim>
+function cache_clear_all($cid = NULL, $bin = NULL, $wildcard = FALSE) {
+  if (!isset($cid) && !isset($bin)) {
+    // Clear the block cache first, so stale data will
+    // not end up in the page cache.
+    if (module_exists('block')) {
+      cache_clear_all(NULL, 'cache_block');
+    }
+    cache_clear_all(NULL, 'cache_page');
+    return;
+  }
+  return _cache_get_object($bin)->clear($cid, $wildcard);
+}
+					</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2> Succinct function?</h2>
+					<ul>
+					  <li class="fragment">3 parameters for the function</li>
+					  <li class="fragment">3 * 3 * 2 = 18 combinations in total</li>
+					  <li class="fragment">Users end up invalidating more cache than necessary</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2> Poormans Cache Implementation </h2>
+					<pre><code class="php">
+public function call_method($controller, $method, $params = array(), $call_type = '_do_request_drupal_http') {
+    // We should include the parameters also in the cache id as the result changes based on
+    //them.
+
+    $cache_id = $controller . '_' . $method . '_' . json_encode($params);
+    cache_set($cache_id, $data);
+}
+					</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Welcome CacheTags</h2>
+					<ul>
+					  <li class="fragment">Associate cache entries with metadata, which then enables developers to clear caches based on the metadata.</li>
+					  <li class="fragment"><a href="https://www.drupal.org/project/cachetags"> Cache Tags Module in drupal 7</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Example Tags in Drupal 8 </h2>
+					<pre><code class="yml">
+config:core.entity_form_display.node.text_book.default
+config:core.entity_view_display.node.text_book.default
+block_plugin:system_menu_block__account block_view config:block.block.bartik_account_menu config:system.menu.account rendered
+					</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Using Cache Tags</h2>
+					<pre><code class="php">
+$cache = cache($bin);
+$nid = 1;
+$cache->set('cache_id_one', $some_value, CacheBackendInterface::CACHE_PERMANENT, array('node:' . $nid));
+$cache->set('cache_id_two', $some_value, CacheBackendInterface::CACHE_PERMANENT, array('node:' . $nid));
+
+Cache::invalidateTags(array('node:' . $nid));
+
+// Or even Better
+
+Cache::invalidateTags($node->getCacheTag())
+					</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>getCacheTags()</h2>
+					<ul>
+					  <li class="fragment">Each entity can implement its own getCacheTags</li>
+					  <li class="fragment">So that other developers can precisely clear caches when dealing with your entity.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Cache Context</h2>
+					<ul>
+					  <li class="fragment">Cache contexts are analogous to HTTP's Vary header.</li>
+					  <li class="fragment">Cache contexts provide a declarative way to create context-dependent variations of something that needs to be cached.</li>
+					  <li class="fragment">Cache contexts are now hierarchical.</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="assets/cache_contexts.png" height="268" width="1057">
+				</section>
+
+				<section>
+					<h2>Implementation of Cache Contexts</h2>
+					<p>By User Module</p>
+					<pre>
+						<code class="php">
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheContexts() {
+    $contexts = parent::getCacheContexts();
+
+    // This filter depends on the current user.
+    $contexts[] = 'cache.context.user';
+
+    return $contexts;
+  }
+  					</code>
+					</pre>
 				</section>
 
 				<section>
 					<h2>Server-side dynamic content substitution</h2>
 					<ul>
-					  <li class="fragment">Cache Hit.</li>
-					  <li class="fragment">Cache Miss.</li>
-					  <li class="fragment">Hit Ratio.</li>
-					  <li class="fragment">Cache Bin.</li>
-					  <li class="fragment">Cache Invalidation.</li>
+					  <li class="fragment">All or none caching</li>
+					  <li class="fragment">Personalization and random ordering</li>
+					  <li class="fragment">In a way similar to Edge Side Includes.</li>
+					  <li class="fragment">Substitution happens on server side just before sending the HTML.</li>
+					  <li class="fragment">#post_render_cache is part of Render API.</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Client-side dynamic content substitution</h2>
 					<ul>
-					  <li class="fragment">Cache Hit.</li>
-					  <li class="fragment">Cache Miss.</li>
-					  <li class="fragment">Hit Ratio.</li>
-					  <li class="fragment">Cache Bin.</li>
-					  <li class="fragment">Cache Invalidation.</li>
+					  <li class="fragment">Best Example <em>new</em> marker on comments.</li>
+					  <li class="fragment">Offloading more work from Server to Client.</li>
+					  <li class="fragment">Just in Time substitutions.</li>
+					  <li class="fragment">Not critical, enhancements.</li>
 					</ul>
 				</section>
-
-
-
 
 				<section>
 					<h2>Reference Links</h2>
