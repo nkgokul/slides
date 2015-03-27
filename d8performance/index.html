@@ -78,17 +78,161 @@
 					  <li class="fragment">Why performance is important for Drupal</li>
 					  <li class="fragment">Performance in Drupal 7</li>
 					  <li class="fragment">Drupal 8 Performance Enhancements</li>
-					  <li class="fragment">Code</li>
-
+					  <li class="fragment">Code Samples</li>
 					</ul>
 				</section>
 
+				<section>
+					<h2>Why Performance Matters</h2>
+					<ul>
+					  <li class="fragment"><q>57% of online consumers will abandon a site after waiting 3 seconds for a page to load.</q> Source : webperformancetoday.com</li>
+					  <li class="fragment"><q>39% say speed is more important than functionality for most websites, while only one in five rank greater site functionality as more important.</q> Source : www.webperformancetoday.com/</li>
+					  <li class="fragment"><q>A 1-second delay in page load time equals 11% fewer page views, a 16% decrease in customer satisfaction, and 7% loss in conversions</q>  Source : www.aberdeen.com</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<img src="assets/performance-poverty-line-bounce-2.jpg">
+				</section>
+
+				<section>
+					<img src="assets/abandonment_pageload.png">
+					<p>Source : Kissmetrics</p>
+				</section>
+
+
+				<section>
+					<h2>Why Drupal Performance matters</h2>
+					<ul>
+					  <li class="fragment"><q>The fat head is trampling the long tail</q></li>
+					  <li class="fragment"><q>Fast CMSes suited for various use cases — from simple blogging to complex data modeling — are essential for the success of the long tail.</q></li>
+					  <li class="fragment">Performance and Security are the two major challenges for Enterprise Adoption.</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="assets/why_is_drupal_so_slow.png" height="196" width="581">
+				</section>
+
+				<section>
+					<img src="assets/our_competitors_are_using_comparisons.png" height="544" width="729">
+					<p>Source : https://zesty.io/blog/seo/page-load-times-affect-bounce-rate-and-conversion/</p>
+				</section>
+
+				<section>
+					<h2>Drupal-8 is performant out of the box.</h2>
+					<ul>
+					  <li class="fragment">Zero JavaScript is served to anonymous users by default.</li>
+					  <li class="fragment">Support for responsive images.</li>
+					  <li class="fragment">Partial page caching, which results in much faster serving of HTML of personalized pages for authenticated users.</li>
+					  <li class="fragment">Sensible cache defaults like CSS/JS aggregation enabled, JS assets being loaded from the bottom</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Thumb Rules of Caching</h2>
+					<ul>
+					  <li class="fragment">Process Once Use Multiple Times.</li>
+					  <li class="fragment">Live with stale data when possible</li>
+					  <li class="fragment">Clear Caches infrequently and keep it very specific.</li>
+					  <li class="fragment">When possible do the changes at the lowest level in the stack. LAMP - DCCc : Linux, Apache, Mysql, PHP, Drupal Core, Contrib and custom module.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Glossary for Cache</h2>
+					<ul>
+					  <li class="fragment">Cache Hit.</li>
+					  <li class="fragment">Cache Miss.</li>
+					  <li class="fragment">Hit Ratio.</li>
+					  <li class="fragment">Cache Bin.</li>
+					  <li class="fragment">Cache Invalidation.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Cache Me If You Can</h2>
+				</section>
+
+				<section>
+					<h2>Is Caching Working</h2>
+					<ul>
+					  <li class="fragment">Improve Cache Hit Ratio</li>
+					  <li class="fragment">Nch  X  Tchs > Overload added by caching mechanism</li>
+					  <li class="fragment">Simultaneous Cache Rebuilds doesn't take down the system.</li>
+					</ul>
+				</section>
+
+				<section>
+				<h3><q>There are two hard things in computer science:</q></h3>
+					<ul>
+					<li>Cache invalidation, </li>
+					<li>Naming things and </li>
+					<li>Off-by-one errors </li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h2>Cache Invalidation</h2>
+					<ul>
+					  <li class="fragment">Cache Hit.</li>
+					  <li class="fragment">Cache Miss.</li>
+					  <li class="fragment">Hit Ratio.</li>
+					  <li class="fragment">Cache Bin.</li>
+					  <li class="fragment">Cache Invalidation.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Server-side dynamic content substitution</h2>
+					<ul>
+					  <li class="fragment">Cache Hit.</li>
+					  <li class="fragment">Cache Miss.</li>
+					  <li class="fragment">Hit Ratio.</li>
+					  <li class="fragment">Cache Bin.</li>
+					  <li class="fragment">Cache Invalidation.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Client-side dynamic content substitution</h2>
+					<ul>
+					  <li class="fragment">Cache Hit.</li>
+					  <li class="fragment">Cache Miss.</li>
+					  <li class="fragment">Hit Ratio.</li>
+					  <li class="fragment">Cache Bin.</li>
+					  <li class="fragment">Cache Invalidation.</li>
+					</ul>
+				</section>
+
+
+
+
+				<section>
+					<h2>Reference Links</h2>
+					<ul>
+					  <li class="fragment"><a target="_blank" href="http://wimleers.com/article/performance-calendar-2013-making-the-entire-web-fast">Wim Leers Blog</a> </li>
+					  <li class="fragment"><a target="_blank"href="http://buytaert.net/making-drupal-8-fly">Dries Blog</a></li>
+					  <li class="fragment"><a target="_blank" href="https://docs.google.com/spreadsheet/ccc?key=0AgIiMuY_XxscdFZobFRaVjFnNkZmRUYyd2tqbmRvSGc&usp=drive_web#gid=0">Status of performance issues.</a></li>
+					</ul>
+				</section>
 
 
 				<section>
 					<h1>Thank You!</h1>
 					<h3>Gokul NK</h3>
 				</section>
+
+				<section>
+					<h1>Questions?</h1>
+					<h3>Ask Gokul</h3>
+					<br/>
+					<h1>Not satisfied?</h1>
+					<h3>Ask Google!</h3>
+				</section>
+
 
 			</div>
 
