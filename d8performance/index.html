@@ -92,194 +92,206 @@
 				</section>
 
 				<section>
-					<h2>Why Performance Matters</h2>
-					<ul>
-					  <li class="fragment"><q>57% of online consumers will abandon a site after waiting 3 seconds for a page to load.</q> Source : webperformancetoday.com</li>
-					  <li class="fragment"><q>39% say speed is more important than functionality for most websites, while only one in five rank greater site functionality as more important.</q> Source : www.webperformancetoday.com/</li>
-					  <li class="fragment"><q>A 1-second delay in page load time equals 11% fewer page views, a 16% decrease in customer satisfaction, and 7% loss in conversions</q>  Source : www.aberdeen.com</li>
-					</ul>
+					<section>
+						<h2>Why Performance Matters</h2>
+						<ul>
+						  <li class="fragment"><q>57% of online consumers will abandon a site after waiting 3 seconds for a page to load.</q> Source : webperformancetoday.com</li>
+						  <li class="fragment"><q>39% say speed is more important than functionality for most websites, while only one in five rank greater site functionality as more important.</q> Source : www.webperformancetoday.com/</li>
+						  <li class="fragment"><q>A 1-second delay in page load time equals 11% fewer page views, a 16% decrease in customer satisfaction, and 7% loss in conversions</q>  Source : www.aberdeen.com</li>
+						</ul>
+					</section>
+				  <section>
+						<img src="assets/performance-poverty-line-bounce-2.jpg">
+					</section>
+
+					<section>
+						<img src="assets/abandonment_pageload.png">
+						<p>Source : Kissmetrics</p>
+					</section>
 				</section>
 
 
 				<section>
-					<img src="assets/performance-poverty-line-bounce-2.jpg">
-				</section>
 
-				<section>
-					<img src="assets/abandonment_pageload.png">
-					<p>Source : Kissmetrics</p>
-				</section>
+					<section>
+						<h2>Why Drupal Performance matters</h2>
+						<ul>
+						  <li class="fragment"><q>The fat head is trampling the long tail</q></li>
+						  <li class="fragment"><q>Fast CMSes suited for various use cases — from simple blogging to complex data modeling — are essential for the success of the long tail.</q></li>
+						  <li class="fragment">Performance and Security are the two major challenges for Enterprise Adoption.</li>
+						</ul>
+					</section>
 
+					<section>
+						<img src="assets/why_is_drupal_so_slow.png" height="196" width="581">
+					</section>
 
-				<section>
-					<h2>Why Drupal Performance matters</h2>
-					<ul>
-					  <li class="fragment"><q>The fat head is trampling the long tail</q></li>
-					  <li class="fragment"><q>Fast CMSes suited for various use cases — from simple blogging to complex data modeling — are essential for the success of the long tail.</q></li>
-					  <li class="fragment">Performance and Security are the two major challenges for Enterprise Adoption.</li>
-					</ul>
-				</section>
+					<section>
+						<img src="assets/our_competitors_are_using_comparisons.png" height="544" width="729">
+						<p>Source : https://zesty.io/blog/seo/page-load-times-affect-bounce-rate-and-conversion/</p>
+					</section>
 
-				<section>
-					<img src="assets/why_is_drupal_so_slow.png" height="196" width="581">
-				</section>
-
-				<section>
-					<img src="assets/our_competitors_are_using_comparisons.png" height="544" width="729">
-					<p>Source : https://zesty.io/blog/seo/page-load-times-affect-bounce-rate-and-conversion/</p>
-				</section>
-
-				<section>
-					<h2>Drupal-8 is performant out of the box.</h2>
-					<ul>
-					  <li class="fragment">Zero JavaScript is served to anonymous users by default.</li>
-					  <li class="fragment">Support for responsive images.</li>
-					  <li class="fragment">Partial page caching, which results in much faster serving of HTML of personalized pages for authenticated users.</li>
-					  <li class="fragment">Sensible cache defaults like CSS/JS aggregation enabled, JS assets being loaded from the bottom</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Thumb Rules of Caching</h2>
-					<ul>
-					  <li class="fragment">Process Once Use Multiple Times.</li>
-					  <li class="fragment">Live with stale data when possible</li>
-					  <li class="fragment">Clear Caches infrequently and keep it very specific.</li>
-					  <li class="fragment">When possible do the changes at the lowest level in the stack. LAMP - DCCc : Linux, Apache, Mysql, PHP, Drupal Core, Contrib and custom module.</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Glossary for Cache</h2>
-					<ul>
-					  <li class="fragment">Cache Hit.</li>
-					  <li class="fragment">Cache Miss.</li>
-					  <li class="fragment">Hit Ratio.</li>
-					  <li class="fragment">Cache Bin.</li>
-					  <li class="fragment">Cache Invalidation.</li>
-					</ul>
-				</section>
-
-				<section>
-					<img src="assets/catch-me-if-you-can.jpg" height="700">
-				</section>
-
-				<section>
-					<h2>Cache Me If You Can</h2>
-				</section>
-
-				<section>
-					<h2>Is Caching Working</h2>
-					<ul>
-					  <li class="fragment">Improve Cache Hit Ratio</li>
-					  <li class="fragment">Nch  X  Tchs > Overload added by caching mechanism</li>
-					  <li class="fragment">Simultaneous Cache Rebuilds doesn't take down the system.</li>
-					</ul>
-				</section>
-
-				<section>
-				<h3><q>There are two hard things in computer science:</q></h3>
-					<ul>
-					<li>Cache invalidation, </li>
-					<li>Naming things and </li>
-					<li>Off-by-one errors </li>
-					</ul>
 				</section>
 
 
 				<section>
-					<h2>Cache Invalidation</h2>
-					<ul>
-					  <li class="fragment">In Drupal7 we used to invalidate way too much, thus reducing the Cache Hit Ratio</li>
-
-					  <li class="fragment">By default Drupal7 used to clear all entries from Page Cache Table when any node was edited.</li>
-					</ul>
+					<section>
+						<h2>Drupal-8 is performant out of the box.</h2>
+						<ul>
+						  <li class="fragment">Zero JavaScript is served to anonymous users by default.</li>
+						  <li class="fragment">Support for responsive images.</li>
+						  <li class="fragment">Partial page caching, which results in much faster serving of HTML of personalized pages for authenticated users.</li>
+						  <li class="fragment">Sensible cache defaults like CSS/JS aggregation enabled, JS assets being loaded from the bottom</li>
+						</ul>
+						</section>
 				</section>
+
+
+					<section>
+					<section>
+						<h2>Thumb Rules of Caching</h2>
+						<ul>
+						  <li class="fragment">Process Once Use Multiple Times.</li>
+						  <li class="fragment">Live with stale data when possible</li>
+						  <li class="fragment">Clear Caches infrequently and keep it very specific.</li>
+						  <li class="fragment">When possible do the changes at the lowest level in the stack. LAMP - DCCc : Linux, Apache, Mysql, PHP, Drupal Core, Contrib and custom module.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Glossary for Cache</h2>
+						<ul>
+						  <li class="fragment">Cache Hit.</li>
+						  <li class="fragment">Cache Miss.</li>
+						  <li class="fragment">Hit Ratio.</li>
+						  <li class="fragment">Cache Bin.</li>
+						  <li class="fragment">Cache Invalidation.</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="assets/catch-me-if-you-can.jpg" height="700">
+					</section>
+
+					<section>
+						<h2>Cache Me If You Can</h2>
+					</section>
+
+					<section>
+						<h2>Is Caching Working</h2>
+						<ul>
+						  <li class="fragment">Improve Cache Hit Ratio</li>
+						  <li class="fragment">Nch  X  Tchs > Overload added by caching mechanism</li>
+						  <li class="fragment">Simultaneous Cache Rebuilds doesn't take down the system.</li>
+						</ul>
+					</section>
+				</section>
+
 
 				<section>
-					<h2> Drupal7 Most scary function</h2>
-					<pre><code class="php" data-trim>
-function cache_clear_all($cid = NULL, $bin = NULL, $wildcard = FALSE) {
-  if (!isset($cid) && !isset($bin)) {
-    // Clear the block cache first, so stale data will
-    // not end up in the page cache.
-    if (module_exists('block')) {
-      cache_clear_all(NULL, 'cache_block');
-    }
-    cache_clear_all(NULL, 'cache_page');
-    return;
-  }
-  return _cache_get_object($bin)->clear($cid, $wildcard);
-}
-					</code>
-					</pre>
+					<section>
+							<h3><q>There are two hard things in computer science:</q></h3>
+								<ul>
+								<li>Cache invalidation, </li>
+								<li>Naming things and </li>
+								<li>Off-by-one errors </li>
+								</ul>
+					</section>
+					<section>
+						<h2>Cache Invalidation</h2>
+						<ul>
+						  <li class="fragment">In Drupal7 we used to invalidate way too much, thus reducing the Cache Hit Ratio</li>
+
+						  <li class="fragment">By default Drupal7 used to clear all entries from Page Cache Table when any node was edited.</li>
+						</ul>
+					</section>
+					<section>
+						<h2> Drupal7 Most scary function</h2>
+						<pre><code class="php" data-trim>
+	function cache_clear_all($cid = NULL, $bin = NULL, $wildcard = FALSE) {
+	  if (!isset($cid) && !isset($bin)) {
+	    // Clear the block cache first, so stale data will
+	    // not end up in the page cache.
+	    if (module_exists('block')) {
+	      cache_clear_all(NULL, 'cache_block');
+	    }
+	    cache_clear_all(NULL, 'cache_page');
+	    return;
+	  }
+	  return _cache_get_object($bin)->clear($cid, $wildcard);
+	}
+						</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2> Succinct function?</h2>
+						<ul>
+						  <li class="fragment">3 parameters for the function</li>
+						  <li class="fragment">3 * 3 * 2 = 18 combinations in total</li>
+						  <li class="fragment">Users end up invalidating more cache than necessary</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2> Poormans Cache Implementation </h2>
+						<pre><code class="php">
+	public function call_method($controller, $method, $params = array(), $call_type = '_do_request_drupal_http') {
+	    // We should include the parameters also in the cache id as the result changes based on
+	    //them.
+
+	    $cache_id = $controller . '_' . $method . '_' . json_encode($params);
+	    cache_set($cache_id, $data);
+	}
+						</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Welcome CacheTags</h2>
+						<ul>
+						  <li class="fragment">Associate cache entries with metadata, which then enables developers to clear caches based on the metadata.</li>
+						  <li class="fragment"><a href="https://www.drupal.org/project/cachetags"> Cache Tags Module in drupal 7</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Example Tags in Drupal 8 </h2>
+						<pre><code class="yml">
+	config:core.entity_form_display.node.text_book.default
+	config:core.entity_view_display.node.text_book.default
+	block_plugin:system_menu_block__account block_view config:block.block.bartik_account_menu config:system.menu.account rendered
+						</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Using Cache Tags</h2>
+						<pre><code class="php">
+	$cache = cache($bin);
+	$nid = 1;
+	$cache->set('cache_id_one', $some_value, CacheBackendInterface::CACHE_PERMANENT, array('node:' . $nid));
+	$cache->set('cache_id_two', $some_value, CacheBackendInterface::CACHE_PERMANENT, array('node:' . $nid));
+
+	Cache::invalidateTags(array('node:' . $nid));
+
+	// Or even Better
+
+	Cache::invalidateTags($node->getCacheTag())
+						</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>getCacheTags()</h2>
+						<ul>
+						  <li class="fragment">Each entity can implement its own getCacheTags</li>
+						  <li class="fragment">So that other developers can precisely clear caches when dealing with your entity.</li>
+						</ul>
+					</section>
+
 				</section>
 
-				<section>
-					<h2> Succinct function?</h2>
-					<ul>
-					  <li class="fragment">3 parameters for the function</li>
-					  <li class="fragment">3 * 3 * 2 = 18 combinations in total</li>
-					  <li class="fragment">Users end up invalidating more cache than necessary</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2> Poormans Cache Implementation </h2>
-					<pre><code class="php">
-public function call_method($controller, $method, $params = array(), $call_type = '_do_request_drupal_http') {
-    // We should include the parameters also in the cache id as the result changes based on
-    //them.
-
-    $cache_id = $controller . '_' . $method . '_' . json_encode($params);
-    cache_set($cache_id, $data);
-}
-					</code>
-					</pre>
-				</section>
-
-				<section>
-					<h2>Welcome CacheTags</h2>
-					<ul>
-					  <li class="fragment">Associate cache entries with metadata, which then enables developers to clear caches based on the metadata.</li>
-					  <li class="fragment"><a href="https://www.drupal.org/project/cachetags"> Cache Tags Module in drupal 7</a></li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Example Tags in Drupal 8 </h2>
-					<pre><code class="yml">
-config:core.entity_form_display.node.text_book.default
-config:core.entity_view_display.node.text_book.default
-block_plugin:system_menu_block__account block_view config:block.block.bartik_account_menu config:system.menu.account rendered
-					</code>
-					</pre>
-				</section>
-
-				<section>
-					<h2>Using Cache Tags</h2>
-					<pre><code class="php">
-$cache = cache($bin);
-$nid = 1;
-$cache->set('cache_id_one', $some_value, CacheBackendInterface::CACHE_PERMANENT, array('node:' . $nid));
-$cache->set('cache_id_two', $some_value, CacheBackendInterface::CACHE_PERMANENT, array('node:' . $nid));
-
-Cache::invalidateTags(array('node:' . $nid));
-
-// Or even Better
-
-Cache::invalidateTags($node->getCacheTag())
-					</code>
-					</pre>
-				</section>
-
-				<section>
-					<h2>getCacheTags()</h2>
-					<ul>
-					  <li class="fragment">Each entity can implement its own getCacheTags</li>
-					  <li class="fragment">So that other developers can precisely clear caches when dealing with your entity.</li>
-					</ul>
-				</section>
 
 				<section>
 					<h2>Cache Context</h2>
