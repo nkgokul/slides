@@ -203,8 +203,8 @@
 						<h2>Default config storage</h2>
 						<pre>
 							<code class="php">
-$config_directories['active'] = 'sites/default/files/config_Jtj7ggZcP9JucFgwCXefqrZJnJduKYc8Xapkxp2yF2Ox8S-Wz6G4IZ7OEbdESpnQ6ViccW4t5w/active';
-$config_directories['staging'] = 'sites/default/files/config_Jtj7ggZcP9JucFgwCXefqrZJnJduKYc8Xapkxp2yF2Ox8S-Wz6G4IZ7OEbdESpnQ6ViccW4t5w/staging';
+								$config_directories['active'] = 'sites/default/files/config_Jtj7ggZcP9JucFgwCXefqrZJnJduKYc8Xapkxp2yF2Ox8S-Wz6G4IZ7OEbdESpnQ6ViccW4t5w/active';
+								$config_directories['staging'] = 'sites/default/files/config_Jtj7ggZcP9JucFgwCXefqrZJnJduKYc8Xapkxp2yF2Ox8S-Wz6G4IZ7OEbdESpnQ6ViccW4t5w/staging';
 							</code>
 						</pre>
 					</section>
@@ -212,15 +212,34 @@ $config_directories['staging'] = 'sites/default/files/config_Jtj7ggZcP9JucFgwCXe
 						<h2>A good practice</h2>
 						<pre>
 							<code class="php">
-$config_directories['active'] = './../config/active';
-$config_directories['staging'] = './../config/staging';
+								$config_directories['active'] = './../config/active';
+								$config_directories['staging'] = './../config/staging';
 							</code>
 						</pre>
 					</section>
 				</section>
 
-				<section>
 
+				<section>
+					<section>
+						<h2>Configuration Management Walk-through</h2>
+						<p class = "fragment">admin/config/development/configuration</p>
+						<img src="assets/Screenshot from 2015-07-25 06:10:18.png" height="354" width="861">
+					</section>
+
+					<section>
+						<h2>Config Synchronization</h2>
+						<img src="assets/D8Config3.jpg" height="596" width="803">
+					</section>
+
+					<section>
+						<h2>Configuration Export</h2>
+						<a href="http://local.d8cmi1.com/admin/config/development/configuration/single/export" target="_blank"><img src="assets/Screenshot from 2015-07-25 06:05:26.png" height="600" ></a>
+					</section>
+				</section>
+
+
+				<section>
 					<section>
 						<h2>Configuration API</h2>
 						<p class = "fragment">system.performance.yml</p>
@@ -231,10 +250,10 @@ $config_directories['staging'] = './../config/staging';
 						<h2>Mutable v/s Immutable</h2>
 						<pre>
 							<code class="php">
-//Immutable Config (Read Only)
-$config = \Drupal::config('system.performance');
-//Mutable Config (Read / Write)
-$config = \Drupal::service('config.factory')->getEditable('system.performance');
+								//Immutable Config (Read Only)
+								$config = \Drupal::config('system.performance');
+								//Mutable Config (Read / Write)
+								$config = \Drupal::service('config.factory')->getEditable('system.performance');
 							</code>
 						</pre>
 					</section>
@@ -243,10 +262,10 @@ $config = \Drupal::service('config.factory')->getEditable('system.performance');
 						<h2>Reading Configuration</h2>
 						<pre>
 							<code class="php">
-$config = \Drupal::config('system.maintenance');
-$message = $config->get('message');
-$enabled = \Drupal::config('system.performance')->get('cache.page.enabled');
-$page_cache = \Drupal::config('system.performance')->get('cache.page');
+								$config = \Drupal::config('system.maintenance');
+								$message = $config->get('message');
+								$enabled = \Drupal::config('system.performance')->get('cache.page.enabled');
+								$page_cache = \Drupal::config('system.performance')->get('cache.page');
 							</code>
 						</pre>
 					</section>
@@ -255,18 +274,18 @@ $page_cache = \Drupal::config('system.performance')->get('cache.page');
 						<h2>Writing Configuration</h2>
 						<pre>
 							<code class="php">
-$config = \Drupal::service('config.factory')->getEditable('system.performance');
-// Set a scalar value.
-$config->set('cache.page.enabled', 1);
+								$config = \Drupal::service('config.factory')->getEditable('system.performance');
+								// Set a scalar value.
+								$config->set('cache.page.enabled', 1);
 
 
-// Set an array of values.
-$page_cache_data = array('enabled' => 1, 'max_age' => 5);
-$config->set('cache.page', $page_cache_data);
+								// Set an array of values.
+								$page_cache_data = array('enabled' => 1, 'max_age' => 5);
+								$config->set('cache.page', $page_cache_data);
 
 
-// Save your data to the file system.
-$config->save();
+								// Save your data to the file system.
+								$config->save();
 							</code>
 						</pre>
 					</section>
@@ -275,9 +294,9 @@ $config->save();
 						<h2>Removing Single Configuration</h2>
 						<pre>
 							<code class="php">
-$config = \Drupal::service('config.factory')->getEditable('system.performance');
-$config->clear('cache.page.max_age')->save();
-$page_cache_data = $config->get('cache.page');
+								$config = \Drupal::service('config.factory')->getEditable('system.performance');
+								$config->clear('cache.page.max_age')->save();
+								$page_cache_data = $config->get('cache.page');
 							</code>
 						</pre>
 					</section>
@@ -286,7 +305,7 @@ $page_cache_data = $config->get('cache.page');
 						<h2>Removing Whole Configuration Set</h2>
 						<pre>
 							<code class="php">
-\Drupal::service('config.factory')->getEditable('system.performance')->delete();
+								\Drupal::service('config.factory')->getEditable('system.performance')->delete();
 							</code>
 						</pre>
 					</section>
@@ -301,7 +320,7 @@ $page_cache_data = $config->get('cache.page');
 						<h2>Configuration overrides</h2>
 						<pre>
 							<code class="php">
-$config['system.maintenance']['message'] = 'Sorry, our site is down now.';
+								$config['system.maintenance']['message'] = 'Sorry, our site is down now.';
 							</code>
 						</pre>
 					</section>
@@ -313,11 +332,11 @@ $config['system.maintenance']['message'] = 'Sorry, our site is down now.';
 						config_example.service.yml
 						<pre>
 							<code class="yml">
-services:
-  config_example.overrider:
-    class: \Drupal\config_example\ConfigExampleOverrides
-    tags:
-      - {name: config.factory.override, priority: 5}
+								services:
+								config_example.overrider:
+								class: \Drupal\config_example\ConfigExampleOverrides
+								tags:
+								- {name: config.factory.override, priority: 5}
 							</code>
 						</pre>
 					</section>
@@ -326,153 +345,191 @@ services:
 						<h2>Configuration overrides</h2>
 						<pre>
 							<code class="php">
-/**
- * Example configuration override.
- */
-class ConfigModuleOverrides implements ConfigFactoryOverrideInterface {
+								/**
+								* Example configuration override.
+								*/
+								class ConfigModuleOverrides implements ConfigFactoryOverrideInterface {
 
-  public function loadOverrides($names) {
-    $overrides = array();
-    if (in_array('system.site', $names)) {
-      $overrides['system.site'] = ['name' => 'Overridden site name!'];
-    }
-    return $overrides;
-  }
-							</code>
-						</pre>
-					</section>
+								public function loadOverrides($names) {
+								$overrides = array();
+								if (in_array('system.site', $names)) {
+								$overrides['system.site'] = ['name' => 'Overridden site name!'];
+							}
+							return $overrides;
+						}
+					</code>
+				</pre>
+			</section>
 
-					<section>
-						<h2>Reading overriden value</h2>
-						<pre>
-							<code class="php">
+			<section>
+				<h2>Reading overriden value</h2>
+				<pre>
+					<code class="php">
 
-								// Get the site name, with overrides.
-								$site_name = \Drupal::config('system.site')->get('name');
+						// Get the site name, with overrides.
+						$site_name = \Drupal::config('system.site')->get('name');
 
-								// Get the site name without overrides.
-								$site_name = \Drupal::configFactory()->getEditable('system.site')->get('name');
+						// Get the site name without overrides.
+						$site_name = \Drupal::configFactory()->getEditable('system.site')->get('name');
 
-							</code>
-						</pre>
-					</section>
-				</section>
-
-
+					</code>
+				</pre>
+			</section>
+		</section>
 
 
+
+
+		<section>
+			<section>
+				<h2>Sites own their configuration,</h2>
+				<h2 class="fragment highlight-red">not modules.</h2>
+			</section>
+			<section>
+				By design, sites are protected from the “confusion” and “unpredictable behavior” that would be created by modules attempting to manage the configuration.
+			</section>
+			<section>
+				“A site owns its active configuration, not the module that provides the default configuration.”
+			</section>
+			<section>
+				“If a module changes a default configuration value from true to false, it should not just go and update the active configuration, since the website might rely on that value being false.”
+			</section>
+			<section>
+				“Therefore knowing which config entities the module has provided is not actually that useful. ”
+			</section>
+			<section>
+				“If a module changes the structure of its configuration so that existing active configuration will no longer work, it will need to write a hook_update_N function to fix the active configuration.”
+			</section>
+
+		</section>
+
+		<section>
+			<section>
+				<h2>Two UseCases!</h2>
+				<ul>
+					<li class="fragment">To move configuration between multiple versions of a single site.</li>
+					<li class="fragment">To share and distribute configuration among multiple sites.</li>
+				</ul>
+			</section>
+			<section>
+				Credits to Nedjo for highlighting this in clear terms
+			</section>
+
+			<section>
+				<h2>A suite of Modules to Fill the gap</h2>
+			</section>
+			<section>
+				<h2>Configuration Update Manager</h2>
+				<ul>
+					<li class="fragment">Complements Core Configuration Manager</li>
+					<li class="fragment">Shows Difference beween updated modules and current configurations on your site</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Configuration Synchronize</h2>
+				<ul>
+					<li class="fragment">Provides methods for safely importing site configuration from updated modules and themes.</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Configuration Development</h2>
+				<ul>
+					<li class="fragment">A developer module that automatically imports/exports config at every page request, and allows you to export configuration in bulk into modules</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Features</h2>
+				<ul>
+					<li class="fragment">Configuration Packager</li>
+					<li class="fragment">Now uses Configuration Update Manager</li>
+				</ul>
+			</section>
+    </section>
+
+			<section>
 				<section>
-					<section>
-						<h2>Sites own their configuration,</h2>
-						<h2 class="fragment highlight-red">not modules.</h2>
-					</section>
-					<section>
-						By design, sites are protected from the “confusion” and “unpredictable behavior” that would be created by modules attempting to manage the configuration.
-					</section>
-					<section>
-						“A site owns its active configuration, not the module that provides the default configuration.”
-					</section>
-					<section>
-						“If a module changes a default configuration value from true to false, it should not just go and update the active configuration, since the website might rely on that value being false.”
-					</section>
-					<section>
-						“Therefore knowing which config entities the module has provided is not actually that useful. ”
-					</section>
-					<section>
-						“If a module changes the structure of its configuration so that existing active configuration will no longer work, it will need to write a hook_update_N function to fix the active configuration.”
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h2>Two UseCases!</h2>
-						<ul>
-							<li class="fragment">To move configuration between multiple versions of a single site.</li>
-							<li class="fragment">To share and distribute configuration among multiple sites.</li>
-						</ul>
-					</section>
-					<section>
-						Credits to Nedjo for highlighting this in clear terms
-					</section>
-
-					<section>
-						<h2>A suite of Modules to Fill the gap</h2>
-					</section>
-					<section>
-						<h2>Configuration Update Manager</h2>
-						<ul>
-							<li class="fragment">Complements Core Configuration Manager</li>
-							<li class="fragment">Shows Difference beween updated modules and current configurations on your site</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Configuration Synchronize</h2>
-						<ul>
-							<li class="fragment">Provides methods for safely importing site configuration from updated modules and themes.</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Configuration Development</h2>
-						<ul>
-							<li class="fragment">A developer module that automatically imports/exports config at every page request, and allows you to export configuration in bulk into modules</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Features</h2>
-						<ul>
-							<li class="fragment">Configuration Packager</li>
-							<li class="fragment">Now uses Configuration Update Manager</li>
-						</ul>
-					</section>
-
-				</section>
-
-				<section>
-					<h2>CheatSheet</h2>
+					<h2>Configurations and Translation</h2>
 					<ul>
+						<li class="fragment">D7 Supports only node translations by default.</li>
+						<li class="fragment">Other modules necessary to translate the configuration</li>
+						<li class="fragment">Drupal 8 has support for configuration translation in Core</li>
 
-						<a href="https://www.drupal.org/files/ConfigSchemaCheatSheet1.5.pdf" class="fragment"><img src="assets/cheat-sheet.png"></a>
 					</ul>
 				</section>
-
 				<section>
-					<h2>Reference Links</h2>
-					<ul>
-						<li class="fragment"><a target="_blank" href="https://www.drupal.org/node/2120523">Overview of Configuration</a> </li>
-						<li class="fragment"><a target="_blank" href="http://awebfactory.com/node/536">Two Use Cases in configuration Management</a></li>
-						<li class="fragment"><a target="_blank" href="http://nuvole.org/blog/2015/apr/27/drupal-8-configuration-management-features">Drupal 8 Configuration Management Features.</a></li>
-					</ul>
-				</section>
-
-
-				<section>
-					<h1>Thank You!</h1>
-					<h3>Gokul NK</h3>
+				<h2>Entities</h2>
+					<li class="fragment">Entity Based Translation.</li>
+					<li class="fragment">Both content and configurations are now entities</li>
+					<li class="fragment">YAML files makes translations easier.</li>
 				</section>
 
 				<section>
-					<h1>Questions?</h1>
-					<h3>Ask Gokul</h3>
-					<br/>
-					<h1>Not satisfied?</h1>
-					<h3>Ask Google!</h3>
+					<h2>Content and configuration translations</h2>
+				    <ul>
+				      <li class="fragment">Config system has full support for language overrides</li>
+				      <li class="fragment">All values stored in configuration may have a language variance</li>
+				      <li class="fragment">Contexual access system lets you load values with specific language overrides</li>
+				      <li class="fragment">These overrides are fully deployment friendly</li>
+				      <li class="fragment">Default(shipped) configuration is translatable</li>
+				      <li class="fragment">Eg: shipped Views, content types, fields, etc</li>
+				      <li class="fragment"><i>Config translation</i> provides the UI</li>
+				    </ul>
 				</section>
+				  <section>
+				    <a href="http://local.d8cmi1.com/admin/modules"><img src="./assets/config_ui.jpeg"></a>
+				  </section>
+				  <section>
+				    <h2>Config VS Content</h2>
+				    <img src="./assets/ConfigContent.jpg">
+				    <small>Image source: <a href="http://hojtsy.hu/multilingual-drupal8">http://hojtsy.hu/multilingual-drupal8</a></small>
+				  </section>
+			</section>
+
+			<section>
+				<h2>CheatSheet</h2>
+				<ul>
+
+					<a href="https://www.drupal.org/files/ConfigSchemaCheatSheet1.5.pdf" class="fragment"><img src="assets/cheat-sheet.png"></a>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Reference Links</h2>
+				<ul>
+					<li class="fragment"><a target="_blank" href="https://www.drupal.org/node/2120523">Overview of Configuration</a> </li>
+					<li class="fragment"><a target="_blank" href="http://awebfactory.com/node/536">Two Use Cases in configuration Management</a></li>
+					<li class="fragment"><a target="_blank" href="http://nuvole.org/blog/2015/apr/27/drupal-8-configuration-management-features">Drupal 8 Configuration Management Features.</a></li>
+				</ul>
+			</section>
 
 
-			</div>
+			<section>
+				<h1>Thank You!</h1>
+				<h3>Gokul NK</h3>
+			</section>
+
+			<section>
+				<h1>Questions?</h1>
+				<h3>Ask Gokul</h3>
+				<br/>
+				<h1>Not satisfied?</h1>
+				<h3>Ask Google!</h3>
+			</section>
+
 
 		</div>
-		<footer class="azri-logo logo">
-			<a href="http://www.arisolutions.com/"><img src="assets/azri-logo-white.png" alt="azri logo" /></a>
-		</footer>
-		<footer class="dcb-logo logo">
-			<a href="http://2015.drupalcampdelhi.com/"><img src="assets/logo-dcb.png" alt="dcb logo" /></a>
-		</footer>
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
 
-		<script>
+	</div>
+	<footer class="azri-logo logo">
+		<a href="http://www.arisolutions.com/"><img src="assets/azri-logo-white.png" alt="azri logo" /></a>
+	</footer>
+	<footer class="dcb-logo logo">
+		<a href="http://2015.drupalcampdelhi.com/"><img src="assets/logo-dcb.png" alt="dcb logo" /></a>
+	</footer>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
 
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
