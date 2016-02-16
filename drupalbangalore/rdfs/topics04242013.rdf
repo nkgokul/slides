@@ -1,0 +1,103 @@
+# 
+# Namespace prefixes 
+# 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> . 
+@prefix : <http://ipp.worldbank.org#> .  
+
+#
+# Sectors
+#
+:AgricultureAndInnovation a :Sector  .
+:AgricultureAndInnovation :prefLabel "Agriculture and Innovation"  .
+:AgricultureAndInnovation :hasIconUri  "http://ipp-testing.azri.de/sites/default/files/public_url/select-a-sector-column-one-icon.png" .
+
+:InformationAndCommunicationTech a :Sector  .
+:InformationAndCommunicationTech :prefLabel "Information and Communication Technologies (ICT)"  .
+:InformationAndCommunicationTech :hasIconUri  "http://ipp-testing.azri.de/sites/default/files/public_url/select-a-sector-column-two-icon.png" .
+
+:Biotechnology a :Sector  .
+:Biotechnology :prefLabel "Biotechnology"  .
+:Biotechnology :hasIconUri  "http://ipp-testing.azri.de/sites/default/files/public_url/select-a-sector-column-three-icon.png" .
+
+:Nanotechnology a :Sector  .
+:Nanotechnology :prefLabel "Nanotechnology"  .
+:Nanotechnology :hasIconUri  "http://ipp-testing.azri.de/sites/default/files/public_url/select-a-sector-column-four-icon.png" .
+
+#
+# Topics
+#
+:InnovationOverview a :TopLevelTopic  .
+:InnovationOverview :prefLabel "Innovation: Overview, Measurement and Policy"  .
+
+:Definitions a :Topic  .
+:Definitions :prefLabel "Definitions and Fundamentals"  .
+:Definitions :subTopicOf :InnovationOverview  .
+
+:Measurement a :Topic  .
+:Measurement :prefLabel "Measurement Issues"  .
+:Measurement :subTopicOf :InnovationOverview  .
+
+:Goals a :TopLevelTopic  .
+:Goals :prefLabel "Goals/Outcomes"  .
+
+:EconomicGrowth a :Topic  .
+:EconomicGrowth :prefLabel "Economic Growth, Competitiveness, and Jobs"  .
+:EconomicGrowth :subTopicOf :Goals  .
+
+:GreenInnovation a :Topic  .
+:GreenInnovation :prefLabel "Green Innovation"  .
+:GreenInnovation :subTopicOf :Goals  .
+
+:InclusiveInnovation a :Topic  .
+:InclusiveInnovation :prefLabel "Inclusive Innovation and Development"  .
+:InclusiveInnovation :subTopicOf :Goals  .
+
+:BusinessInnovation a :TopLevelTopic  .
+:BusinessInnovation :prefLabel "Business Innovation"  .
+
+:InnovativeEntrepreneurship a :Topic  .
+:InnovativeEntrepreneurship :prefLabel "Innovative Entrepreneurship"  .
+:InnovativeEntrepreneurship :subTopicOf :BusinessInnovation  .
+
+:EstablishedFirms a :Topic  .
+:EstablishedFirms :prefLabel "Innovation in Established Firms"  .
+:EstablishedFirms :subTopicOf :BusinessInnovation  .
+
+:Connectivity a :TopLevelTopic  .
+:Connectivity :prefLabel "Connectivity for Innovation"  .
+
+:Finance a :TopLevelTopic  .
+:Finance :prefLabel "Finance for Innovation"  .
+
+:PublicRD a :TopLevelTopic  .
+:PublicRD :prefLabel "Public Sector R&D"  .
+:KnowledgeMarkets :subTopicOf :PublicRD .
+:KnowledgeMarkets  :prefLabel "Knowledge Markets" .
+:KnowledgeMarkets :dependsOn :LargeDomesticFirms .
+:KnowledgeMarkets :conditionedBy :IprRegimes .
+:KnowledgeMarkets :promotedBy :TechPlatforms .
+
+:SpinoffsFromPsr :subTopicOf :PublicRD .
+:SpinoffsFromPsr :prefLabel "Spin-offs from Public Sector Research" .
+:SpinoffsFromPsr :establishedBy :Researchers .
+:SpinoffsFromPsr :promotedBy :PublicResearchInstitutes .
+:SpinoffsFromPsr :enabledBy :FinancialMarkets .
+:SpinoffsFromPsr :conditionedBy :IprRegimes .
+:SpinoffsFromPsr :supportedBy :SandTParks .
+
+:Researchers :subTopicOf :PublicRD .
+:Researchers  :prefLabel "Researchers" .
+:Researchers :perform :TechDevByPsr .
+:Researchers :participateIn :KnowledgeMarkets .
+:Researchers :workIn :PublicResearchInstitutes .
+:Researchers :respondTo :PublicSectorResearchFunding .
+
+:Test a :Topic  .
+:Test :prefLabel "Test" .
+:Test :subTopicOf :BusinessInnovation .
+
+
+
