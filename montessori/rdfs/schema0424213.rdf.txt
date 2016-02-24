@@ -1,0 +1,425 @@
+# 
+# Namespace prefixes 
+# 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> . 
+@prefix : <http://ipp.worldbank.org#> .  
+
+# 
+# Classes 
+# 
+:Node a	rdfs:Class . 
+:VocabularyTerm a rdfs:Class . 
+:ContentPage rdfs:subClassOf :Node . 
+:Document rdfs:subClassOf :Node . 
+:Tag rdfs:subClassOf :VocabularyTerm .
+:Topic rdfs:subClassOf :VocabularyTerm .
+:TopLevelTopic rdfs:subClassOf :Topic  .
+:Sector rdfs:subClassOf :VocabularyTerm .
+:Region rdfs:subClassOf :VocabularyTerm .
+:Country rdfs:subClassOf :VocabularyTerm .
+:Facet rdfs:subClassOf rdf:Property .
+
+#
+# Information architecture properties 
+#
+# Content page properties 
+:hasUri a rdfs:Property .
+:hasTopic a rdfs:Property .
+:hasSector a rdfs:Property .
+:hasCountry a rdfs:Property .
+:hasRegion a rdfs:Property .
+:hasRelatedLink a rdfs:Property .
+# Navigation properties 
+:subTopicOf a rdfs:Property .
+:subSectorOf a rdfs:Property .
+:inRegion a rdfs:Property .
+# Icon property - associates an icon with a topic, sector, or content page
+:hasIconUri a rdfs:Property .
+# New in IPP property - include content page or documents in "New in the IPP"
+:isNewInIPP a rdfs:Property .
+
+#
+# Properties for describing facets to Drupal
+# 
+:fieldName a rdf:Property .
+:fieldType a rdf:Property .
+:vocabulary a rdf:Property .
+:useToFilter a rdf:Property .
+
+#
+# Node Facets - these are properties used to describe nodes
+#
+:publicationDate a :Facet .
+:publicationDate :fieldName "publicationDate" .
+:publicationDate :fieldType "date" .
+:publicationDate :useToFilter "true" .
+:publicationDate skos:prefLabel "Publication Date" .
+
+:isNewinIPP a :Facet .
+:isNewinIPP :fieldName "isNewinIPP" .
+:isNewinIPP :fieldType "boolean" .
+:isNewinIPP skos:prefLabel "New In IPP" .
+
+:hasIconUri a :Facet .
+:hasIconUri :fieldName "hasIconUri" .
+:hasIconUri :fieldType "image" .
+:hasIconUri skos:prefLabel "Images" .
+
+:title a :Facet .
+:title :fieldName "title" .
+:title :fieldType "text" .
+:title :useToFilter "false" .
+:title skos:prefLabel "Title" .
+
+:organisation a :Facet .
+:organisation :fieldName "organisation" .
+:organisation :fieldType "text" .
+:organisation :useToFilter "true" .
+:organisation skos:prefLabel "organisation" .
+
+:publisher a :Facet .
+:publisher :fieldName "publisher" .
+:publisher :fieldType "text" .
+:publisher :useToFilter "true" .
+:publisher skos:prefLabel "Publisher" .
+
+:documentID a :Facet .
+:documentID :fieldName "documentID" .
+:documentID :fieldType "text" .
+:documentID :useToFilter "false" .
+:documentID skos:prefLabel "Document ID" .
+
+:author a :Facet .
+:author :fieldName "author" .
+:author :fieldType "text" .
+:author :useToFilter "false" .
+:author skos:prefLabel "Author" .
+
+:fragmentStartPage a :Facet .
+:fragmentStartPage :fieldName "fragmentstartpage" .
+:fragmentStartPage :fieldType "number" .
+:fragmentStartPage :useToFilter "false" .
+:fragmentStartPage skos:prefLabel "Fragment Start Page" .
+
+:fragmentEndPage a :Facet .
+:fragmentEndPage :fieldName "fragmentendpage" .
+:fragmentEndPage :fieldType "number" .
+:fragmentEndPage :useToFilter "false" .
+:fragmentEndPage skos:prefLabel "Fragment End Page" .
+
+:hasKnowledgeBasis a :Facet .
+:hasKnowledgeBasis :fieldName "knowledgeBasis" .
+:hasKnowledgeBasis :fieldType "longtext" .
+:hasKnowledgeBasis :useToFilter "false" .
+:hasKnowledgeBasis skos:prefLabel "Knowledge Basis" .
+
+:hasRelatedLink a :Facet .
+:hasRelatedLink :fieldName "hasRelatedLink" .
+:hasRelatedLink :contentType "ContentPage" .
+:hasRelatedLink :fieldType "entityreference" .
+:hasRelatedLink :useToFilter "true" .
+:hasRelatedLink skos:prefLabel "Related Link" .
+
+:condition a :Facet .
+:condition :fieldName "condition" .
+:condition :contentType "ContentPage" .
+:condition :fieldType "entityreference" .
+:condition :useToFilter "true" .
+:condition skos:prefLabel "Condition" .
+
+:hasGeoScale a :Facet .
+:hasGeoScale :fieldName "hasGeoScale" .
+:hasGeoScale :fieldType "text" .
+:hasGeoScale :useToFilter "false" .
+:hasGeoScale skos:prefLabel "Geographic Scale" .
+
+:isAboutCountry a :Facet .
+:isAboutCountry :fieldName "aboutCountry" .
+:isAboutCountry :fieldType "termreference" .
+:isAboutCountry :vocabulary "country" .
+:isAboutCountry :useToFilter "true" .
+:isAboutCountry skos:prefLabel "About Country" .
+
+:isAboutRegion a :Facet .
+:isAboutRegion :fieldName "aboutRegion" .
+:isAboutRegion :fieldType "termreference" .
+:isAboutRegion :vocabulary "region" .
+:isAboutRegion :useToFilter "true" .
+:isAboutRegion skos:prefLabel "About Region" .
+
+:documentType a :Facet .
+:documentType :fieldName "documentType" .
+:documentType :fieldType "text" .
+:documentType :useToFilter "true" .
+:documentType skos:prefLabel "Document Type" .
+
+:includesContentType a :Facet .
+:includesContentType  :fieldName "includesContentType" .
+:includesContentType  :fieldType "text" .
+:includesContentType  :useToFilter "false" .
+:includesContentType  skos:prefLabel "Includes content type" .
+
+:includesFormatType a :Facet .
+:includesFormatType  :fieldName "includesFormatType" .
+:includesFormatType :fieldType "text" .
+:includesFormatType :useToFilter "false" .
+:includesFormatType skos:prefLabel "Includes format type" .
+
+:isAboutYears a :Facet .
+:isAboutYears :fieldName "aboutYears" .
+:isAboutYears :fieldType "daterange" .
+:isAboutYears :useToFilter "true" .
+:isAboutYears skos:prefLabel "About Years" .
+
+:reviewRelevanceBy a :Facet .
+:reviewRelevanceBy :fieldName "reviewRelevanceBy" .
+:reviewRelevanceBy :fieldType "date" .
+:reviewRelevanceBy :useToFilter "true" .
+:reviewRelevanceBy skos:prefLabel "Review Relevance by" .
+
+:discussesSolution a :Facet .
+:discussesSolution :fieldName "discussesSolution" .
+:discussesSolution :fieldType "longtext" .
+:discussesSolution :useToFilter "false" .
+:discussesSolution skos:prefLabel "Discusses Solution" .
+
+:addressesProblem a :Facet .
+:addressesProblem :fieldName "addressesProblem" .
+:addressesProblem :fieldType "longtext" .
+:addressesProblem :useToFilter "false" .
+:addressesProblem skos:prefLabel "Addresses Problem" .
+
+:aboutTopic a :Facet .
+:aboutTopic :fieldName "aboutTopic" .
+:aboutTopic :fieldType "termreference" .
+:aboutTopic :vocabulary "topic" .
+:aboutTopic :useToFilter "true" .
+:aboutTopic skos:prefLabel "About Topic" .
+
+:aboutActor a :Facet .
+:aboutActor :fieldName "aboutActor" .
+:aboutActor :fieldType "text" .
+:aboutActor :useToFilter "true" .
+:aboutActor skos:prefLabel "About Actor" .
+
+:aboutOperationalQuestions a :Facet .
+:aboutOperationalQuestions :fieldName "aboutOperationalQuestions" .
+:aboutOperationalQuestions :fieldType "text" .
+:aboutOperationalQuestions :useToFilter "true" .
+:aboutOperationalQuestions skos:prefLabel "About Operational Questions" .
+
+:whenToUse a :Facet .
+:whenToUse :fieldName "whenToUse" .
+:whenToUse :fieldType "longtext" .
+:whenToUse :useToFilter "false" .
+:whenToUse skos:prefLabel "When to Use" .
+
+:otherTag a :Facet .
+:otherTag :fieldName "otherTag" .
+:otherTag :fieldType "termreference" .
+:otherTag :vocabulary "tag" .
+:otherTag :useToFilter "true" .
+:otherTag skos:prefLabel "Other Tag" .
+
+:hasSearchResult a :Facet .
+:hasSearchResult :fieldName "hasSearchResult" .
+:hasSearchResult :fieldType "longtext" .
+:hasSearchResult skos:prefLabel "Search Result" .
+
+:hasAbstract a :Facet .
+:hasAbstract :fieldName "hasAbstract" .
+:hasAbstract :fieldType "longtext" .
+:hasAbstract skos:prefLabel "has Abstract" .
+
+:hasExecutiveSummary a :Facet .
+:hasExecutiveSummary :fieldName "hasExecutiveSummary" .
+:hasExecutiveSummary :fieldType "longtext" .
+:hasExecutiveSummary skos:prefLabel "has Executive Summary" .
+
+#
+# Vocabulary Term Facets - properties used to describe vocabulary terms 
+#
+:hasSynonym a rdf:Facet .
+:hasSynonym :fieldName "hasSynonym" .
+:hasSynonym :fieldType "termreference" .
+:hasSynonym :vocabulary "tag" .
+:hasSynonym skos:prefLabel "Synonym" .
+
+:hasTopic a rdf:Facet .
+:hasTopic :fieldName "hasTopic" .
+:hasTopic :fieldType "termreference" .
+:hasTopic :vocabulary "topic" .
+:hasTopic skos:prefLabel "Topic" .
+
+:seeAlso a rdf:Facet .
+:seeAlso :fieldName "seeAlso" .
+:seeAlso :fieldType "termreference" .
+:seeAlso :vocabulary "tag" .
+:seeAlso skos:prefLabel "See Also" .
+
+:hasUri a rdf:Facet .
+:hasUri :fieldName "hasUri" .
+:hasUri :fieldType "longtext" .
+:hasUri skos:prefLabel "URI" .
+
+:hasExample a rdf:Facet .
+:hasExample :fieldName "hasExample" .
+:hasExample :fieldType "longtext" .
+:hasExample skos:prefLabel "Example" .
+
+:hasDefinition a rdf:Facet .
+:hasDefinition :fieldName "hasDefinition" .
+:hasDefinition :fieldType "longtext" .
+:hasDefinition skos:prefLabel "Definition" .
+
+:hasChangeNote a rdf:Facet .
+:hasChangeNote :fieldName "Change Note" .
+:hasChangeNote :fieldType "longtext" .
+:hasChangeNote skos:prefLabel "Change Note" .
+
+:hasDefinitionSource a rdf:Facet .
+:hasDefinitionSource :fieldName "hasDefinitionSource" .
+:hasDefinitionSource :fieldType "longtext" .
+:hasDefinitionSource skos:prefLabel "Definition Source" .
+
+:hasOrigin a rdf:Facet .
+:hasOrigin :fieldName "hasOrigin" .
+:hasOrigin :fieldType "text" .
+:hasOrigin skos:prefLabel "Origin" .
+
+:hasOecdUri a rdf:Facet .
+:hasOecdUri :fieldName "hasOecdUri" .
+:hasOecdUri :fieldType "longtext" .
+:hasOecdUri skos:prefLabel "OECD URI" .
+
+:hasFacet a rdf:Facet .
+:hasFacet :fieldName "hasFacet" .
+:hasFacet :fieldType "text" .
+:hasFacet skos:prefLabel "Facet" .
+
+#
+# Properties for relating terms to each other - not used yet
+# 
+:commercializedBy a :Facet .
+:commercializedBy :fieldName "Commercialized by" .
+:commercializedBy :fieldType "termreference" .
+:commercializedBy :vocabulary "topic" .
+
+:performedBy a :Facet .
+:performedBy :fieldName "Performed by" .
+:performedBy :vocabulary "topic" .
+:performedBy :fieldType "termreference" .
+
+:dependsOn a :Facet .
+:dependsOn :fieldName "Depends on" .
+:dependsOn :vocabulary "topic" .
+:dependsOn :fieldType "termreference" .
+
+:conditionedBy a :Facet .
+:conditionedBy :fieldName "Conditioned by" .
+:conditionedBy :vocabulary "topic" .
+:conditionedBy :fieldType "termreference" .
+
+:promotedBy a :Facet .
+:promotedBy :fieldName "Promoted by" .
+:promotedBy :vocabulary "topic" .
+:promotedBy :fieldType "termreference" .
+
+:establishedBy a :Facet .
+:establishedBy :fieldName "Established by" .
+:establishedBy :vocabulary "topic" .
+:establishedBy :fieldType "termreference" .
+
+:enabledBy a :Facet .
+:enabledBy :fieldName "Enabled by" .
+:enabledBy :vocabulary "topic" .
+:enabledBy :fieldType "termreference" .
+
+:supportedBy a :Facet .
+:supportedBy :fieldName "Supported by" .
+:supportedBy :vocabulary "topic" .
+:supportedBy :fieldType "termreference" .
+
+:participateIn a :Facet .
+:participateIn :fieldName "Participate in" .
+:participateIn :vocabulary "topic" .
+:participateIn :fieldType "termreference" .
+
+:workIn a :Facet .
+:workIn :fieldName "Work in" .
+:workIn :fieldType "termreference" .
+:workIn :vocabulary "topic" .
+
+:respondTo a :Facet .
+:respondTo :fieldName "Respond to" .
+:respondTo :fieldType "termreference" .
+:respondTo :vocabulary "topic" .
+
+:carryOut a :Facet .
+:carryOut :fieldName "Carry out" .
+:carryOut :fieldType "termreference" .
+:carryOut :vocabulary "topic" .
+
+:promote a :Facet .
+:promote :fieldName "Promote" .
+:promote :fieldType "termreference" .
+:promote :vocabulary "topic" .
+
+:employ a :Facet .
+:employ :fieldName "Employ" .
+:employ :fieldType "termreference" .
+:employ :vocabulary "topic" .
+
+:establish a :Facet .
+:establish :fieldName "Establish" .
+:establish :fieldType "termreference" .
+:establish :vocabulary "topic" .
+
+:partnerWith a :Facet .
+:partnerWith :fieldName "Partner with" .
+:partnerWith :fieldType "termreference" .
+:partnerWith :vocabulary "topic" .
+
+:networkThrough a :Facet .
+:networkThrough :fieldName "Network through" .
+:networkThrough :fieldType "termreference" .
+:networkThrough :vocabulary "topic" .
+
+:utilise a :Facet .
+:utilise :fieldName "Utilise" .
+:utilise :fieldType "termreference" .
+:utilise :vocabulary "topic" .
+
+:buyout a :Facet .
+:buyout :fieldName "Buyout" .
+:buyout :fieldType "termreference" .
+:buyout :vocabulary "topic" .
+
+:collaborateWith a :Facet .
+:collaborateWith :fieldName "Collaborate with" .
+:collaborateWith :fieldType "termreference" .
+:collaborateWith :vocabulary "topic" .
+
+:influence a :Facet .
+:influence :fieldName "Influence" .
+:influence :fieldType "termreference" .
+:influence :vocabulary "topic" .
+
+:support a :Facet .
+:support :fieldName "Support" .
+:support :fieldType "termreference" .
+:support :vocabulary "topic" .
+
+:target a :Facet .
+:target :fieldName "Target" .
+:target :fieldType "termreference" .
+:target :vocabulary "topic" .
+
+:network a :Facet .
+:network :fieldName "Network" .
+:network :fieldType "termreference" .
+:network :vocabulary "topic" .
+
