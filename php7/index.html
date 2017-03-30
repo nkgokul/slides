@@ -49,8 +49,10 @@
 								<p>
 		 					  	      <small>Presented by &nbsp;<a href="http://bit.ly/gokulnk"> Gokul NK </a> &  <a href="https://www.drupal.org/u/sandeepreddyg"> Sandeep Reddy </a></small>
 								</p>
-									<p>
-		 					        <medium><a href="http://azrisolutions.com"> AzriSolutions </a></medium>
+								<p>
+		 					        <medium>
+		 					        	<a href="http://azrisolutions.com"> AzriSolutions </a>
+		 					        </medium>
 								</p>
 							</section>
 						</section>
@@ -196,7 +198,6 @@
 								<h2>Example</h2>
 								<pre>
 								<code class="php">
-								<?php
 								/**
 								 * Return type declarations
 								 */
@@ -209,6 +210,31 @@
 							</section>
 						</section>
 
+						<section>
+							<section>
+								<h2>Return Type Declarations</h2>
+								<ul>
+								  <li class="fragment">Ensures Output consistency</li>
+								  <li class="fragment">We use a colon before the opening curly brace to hint/enforce the return type.</li>
+								</ul>
+							</section>
+
+							<section>
+								<h2>Example</h2>
+								<pre>
+								<code class="php">
+								/**
+								 * Return type declarations
+								 */
+								//declare(strict_types=1);
+								function add(int $a, int $b): int{
+								    return (string)($a + $b);
+								}
+
+								</code>
+								</pre>	
+							</section>
+						</section>
 
 						<section>
 							<section>
