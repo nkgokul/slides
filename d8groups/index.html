@@ -80,20 +80,33 @@
 						<li class="fragment">Configuring role sync to synchronize site roles with group role</li>
 						<li class="fragment">Creation of content in group</li>
 						<li class="fragment">Comparison of group with OG</li>
-						<li class="fragment">Extending groups with subgroup</li>
+						<!--<li class="fragment">Extending groups with subgroup</li>-->
 					</ul>
 				</section>
 
 
 				<section>
 					<section>
-						<h2>Configrations Challenges in Drupal 7</h2>
+						<h2>Group Module</h2>
 						<ul>
-							<li class="fragment">No clear cut differentiation between content and configuration.</li>
-							<li class="fragment">Not every settings can be exported.</li>
-							<li class="fragment">Configuration files are not human readable.</li>
-							<li class="fragment">Features module was good but not sufficient.</li>
-							<li class="fragment">Configuration Management not part of the core.</li>
+							<li class="fragment">The Group module allows you to create arbitrary collections of your content and users on your site and grant access control permissions on those collections.</li>
+							<li class="fragment">Group is very flexible.</li>
+							<li class="fragment">Everything is an entity.</li>
+							<li class="fragment">You activate and use only the parts you need.</li>
+							<li class="fragment">Hooks are available for easy extension.</li>
+						</ul>
+					</section>
+				</section>
+<section>
+					<section>
+						<h2>Group Types</h2>
+						<ul>
+							<li class="fragment">Typically the config entities(Entity type).</li>
+							<li class="fragment">Group types here are configurable(exportable).</li>
+							<li class="fragment">Everything is an entity.</li>
+							<li class="fragment">You activate and use only the parts you need.</li>
+							<li class="fragment">Hooks are available for easy extension.</li>
+<li class="fragment">Group types here are configuration(exportable).</li>
 						</ul>
 					</section>
 				</section>
@@ -102,7 +115,7 @@
 				<section>
 
 					<section>
-						<h2>Overview of Configuration</h2>
+						<h2>Group Types</h2>
 					</section>
 					<section>
 						<h3  class="highlight-blue fragment">Content</h3>
@@ -457,7 +470,7 @@ $site_name = \Drupal::configFactory()->getEditable('system.site')->get('name');
 			<section>
 				<h2>Reference Links</h2>
 				<ul>
-					<li class="fragment"><a target="_blank" href="https://www.drupal.org/node/2120523">Overview of Configuration</a> </li>
+					<li class="fragment"><a target="_blank" href="https://www.drupal.org/node/2710765">Group example use cases</a> </li>
 					<li class="fragment"><a target="_blank" href="http://awebfactory.com/node/536">Two Use Cases in configuration Management</a></li>
 					<li class="fragment"><a target="_blank" href="http://nuvole.org/blog/2015/apr/27/drupal-8-configuration-management-features">Drupal 8 Configuration Management Features.</a></li>
 				</ul>
