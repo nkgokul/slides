@@ -107,7 +107,7 @@
 				</section>
 								
 				<section>
-					<h2>Disdvantages of Groups over OG</h2>
+					<h2>Disdvantages of Groups compared to OG</h2>
 					<ul>
 						<li class="fragment">Groups doesn't allow per group roles/permission.</li>
 						<li class="fragment">It is not possible to convert existing content into Groups.</li>
@@ -115,28 +115,59 @@
 					</ul>
 				</section>
 				
+
 				<section>
-					<section>
-						<h2>Group Types</h2>
-						<li class="fragment">Groups types are like content types but for groups.</li>
-						<li class="fragment">You can define fields, </li>
-						<li class="fragment">For each different combination of configurations/permissions we will need to create a new Group Type</li>
+					<h2>Group Types</h2>
+					<ul>
+					<li class="fragment">Groups types are like content types but for groups.</li>
+					<li class="fragment">You can add fields, manage form display and manage displays.</li>
+					<li class="fragment">For each different combination of configurations/permissions we will need to create a new Group Type</li>
+					</ul>
+				</section>
+
+
+
+				<section>
+				  <section>	
+					<h2>Group Roles and permissions</h2>
+						<ul>
+						<li class="fragment">Default Roles comes shipped with groups</li>
+						<li class="fragment">Anonymous, Outsider and Member</li>
+						<li class="fragment">There is a settings for adding Admin role</li>
+						<li class="fragment">Custom Roles can be added as well</li>
+						</ul>
 					</section>
+					<section>	
+					<h2>Group Roles</h2>
+						<ul>
+						<li class="fragment">Anonymous: This is the same as the global Anonymous role, meaning the user has no account.</li>
+						<li class="fragment">Outsider: This means the user has an account on the site, but is not a member of the group.
+</li>
+						<li class="fragment">Member: The default role for anyone in the group. Behaves like the "Authenticated user" role does globally.</li>
+						</ul>
+					</section>
+				    <section>	
+						<img src="assets/grouppermissions.png">
+					</section>
+
 				</section>
 
 				<section>
-					<section>
-						<h2>Custom Coding for Groups Functionality</h2>
-
+				  <section>	
+					<h3>Linking Group Types and Content Types</h3>
+						<ul>
+						<li class="fragment">You can pick and choose which content types should be enabled in a group type</li>
+						<li class="fragment">This is a setting at Group Type and not at the group level like in OG</li>
+						</ul>
 					</section>
-					<section>
-						<h2>A good practice</h2>
-						<pre><code class="php">
-$config_directories['active'] = './../config/active';
-$config_directories['staging'] = './../config/staging';
-							</code></pre>
+				    <section>	
+						<img src="assets/grouptypesettings.png">
+					</section>
+				    <section>	
+						<img src="assets/installcontenttypes.png">
 					</section>
 				</section>
+
 
 			<section>
 				<section>
@@ -148,11 +179,19 @@ $config_directories['staging'] = './../config/staging';
 					</ul>
 				</section>
 				<section>
+
 				<h2>Integration with Views</h2>
-					<li class="fragment">Entity Based Translation.</li>
-					<li class="fragment">Both content and configurations are now entities</li>
-					<li class="fragment">YAML files makes translations easier.</li>
+					<li class="fragment">View Types for creation</li>
+					<li class="fragment">Group Fields and Filters</li>
+					<li class="fragment">Group Relationships</li>
 				</section>
+
+					<section>	
+						<img src="assets/groupaddview.png">
+					</section>
+				    <section>	
+						<img src="assets/grouprelations.png">
+					</section>
 
 				<section>
 					<h2>Integration with Rules</h2>
@@ -161,13 +200,21 @@ $config_directories['staging'] = './../config/staging';
 				      <li class="fragment">All values stored in configuration may have a language variance</li>
 				    </ul>
 				</section>
+					<section>	
+						<img src="assets/groupreactionrules.png">
+					</section>
+				    <section>	
+						<img src="assets/groupactions.png">
+					</section>
 				<section>
 					<h2>Integration with PathAuto</h2>
 				    <ul>
 				      <li class="fragment">Config system has full support for language overrides</li>
 				    </ul>
-
 				 </section>
+				 	<section>	
+						<img src="assets/grouppathauto.png">
+					</section>
 			</section>
 
 			<section>
@@ -199,8 +246,7 @@ $config_directories['staging'] = './../config/staging';
 
 			<section>
 				<h1>Thank You!</h1>
-				<h3>Gokul NK</h3>
-				<h3>Sandeep</h3>
+				<h3>Denis</h3>
 			</section>
 
 			<section>
