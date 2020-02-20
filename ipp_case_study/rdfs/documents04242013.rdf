@@ -1,0 +1,193 @@
+# 
+# Namespace prefixes 
+# 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+@prefix dc: <http://purl.org/dc/elements/1.1/> .  
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> . 
+@prefix : <http://ipp.worldbank.org#> .  
+
+# 
+# Documents
+# 
+
+:Document1 a :Document .
+:Document1 :title "Transplanting Venture Capital in Developing Countries: A Critical Re-Examination of Evidence" .
+:Document1 :publisher "RAND Graduate School for Policy Studies" .
+:Document1 :author "Athar Osama" .
+:Document1 :hasKnowledgeBasis "Experience-based (originating from an example or anecdote)" .
+:Document1 :isAboutCountry "US" .
+:Document1 :isAboutCountry "Israel" .
+:Document1 :isAboutCountry "India" .
+:Document1 :documentType "A report by a PhD student" .
+:Document1 :includes "Extended text (more than just headings or brief descriptions), Charts or graphs" .
+:Document1 :isAboutYears "1997-2005" .
+:Document1 :reviewRelevanceBy "01/2013" .
+:Document1 :discussesSolution "The need for a systems thinking understanding of venture capital within innovation systems" .
+:Document1 :addressesProblem "Misperception in the applicability of venture capital in the developing country context." .
+:Document1 :aboutTopic "Angel investing & venture capital" .
+:Document1 :whenToUse "When a user is considering developing or supporting a venture capital organisation in a developing country. When a user is considering how a innovation system in a developing country could be improved - i.e., by promoting venture capital.  When a user is better trying to understand venture capital and the role of government in supporting it." .
+:Document1 :hasUri "http://ipp-testing.azri.de/sites/default/files/ippContentPages/dummy.htm" .
+:Document1 :isNewinIPP  "1" .
+:Document1 :hasIconUri "http://ipp-testing.azri.de/sites/default/files/public_url/home-column-one-icon.png" .
+
+:Document2 a :Document .
+:Document2 :title "Is the Venture Capital Business Broken?" .
+:Document2 :publisher "peHUB" .
+:Document2 :author "Charley Polachi" .
+:Document2 :hasKnowledgeBasis "Evidence-based (originating from data and research)" .
+:Document2 :includes "Extended text (more than just headings or brief descriptions)" .
+:Document2 :isAboutYears "2010-2012" .
+:Document2 :reviewRelevanceBy "01/2013" .
+:Document2 :discussesSolution "None." .
+:Document2 :addressesProblem "None." .
+:Document2 :aboutTopic "Pre-seed and seed funding" .
+:Document2 :whenToUse "When the user is interested in the state of the venture capital industry in the United States. When the user is curious about the general pessimism of the United States venture capital industry." .
+:Document2 :hasUri "http://ipp-testing.azri.de/sites/default/files/ippContentPages/dummy.htm" .
+:Document2 :isNewinIPP  "1" .
+:Document2 :hasIconUri "http://ipp-testing.azri.de/sites/default/files/public_url/home-column-two-icon.png" .
+:Document2 :hasSearchResult "The trimmed content to be displayed here" .
+
+:Document3 a :Document .
+:Document3 :title "Completion and Results Report (IBRD-71720) on a Loan in the Amount of US$25.26 Million to the Republic of Chile for the Science for the Knowledge Economy Project" .
+:Document3 :publisher "World Bank" .
+:Document3 :documentID "ICR0000491" .
+:Document3 :author "World Bank, Human Development Sector, Argentina, Chile, Paraguay, Uruguay Country Management Unit, Latin America and Caribbean Region" .
+:Document3 :hasKnowledgeBasis "Evidence-based (originating from data and research) , Experience-based (originating from an example or anecdote)" .
+:Document3 :isAboutCountry "Chile" .
+:Document3 :isAboutRegion "Latin America and the Caribbean (LAC)" .
+:Document3 :documentType "World Bank Implementation and Completion Report" .
+:Document3 :includes "Extended text (more than just headings or brief descriptions), Images, Charts or graphs" .
+:Document3 :isAboutYears "2002-2007" .
+:Document3 :reviewRelevanceBy "no" .
+:Document3 :discussesSolution "Centers of exellence, science policy" .
+:Document3 :addressesProblem "insufficient investment in science and technology, inefficient university-industry collaboration and insufficient international linkages" .
+:Document3 :aboutTopic "R&D labs (in companies, universities, research organizations, or other)" .
+:Document3 :whenToUse "This project is a useful example of how to build a coherent policy strategy and a strong policy framework, in the context of a middle-income country in Latin America. It also illustrates the value of policies to foster public-private linkages and enhance the R&D capacity of firms." .
+
+:Document4 a :Document .
+:Document4 :title "Implementation Completion Report on a Loan in the Amount of US$5.0 Million to the Republic of Chile for a CL - Millennium Science Initiative Project" .
+:Document4 :publisher "World Bank" .
+:Document4 :documentID "24069" .
+:Document4 :author "World Bank, Human and Social Development Group, Latin America & The Caribbean Regional Office" .
+:Document4 :hasKnowledgeBasis "Evidence-based (originating from data and research) , Experience-based (originating from an example or anecdote)" .
+:Document4 :isAboutCountry "Chile" .
+:Document4 :isAboutRegion "Latin America and the Caribbean (LAC)" .
+:Document4 :documentType "World Bank Implementation and Completion Report" .
+:Document4 :includes "Extended text (more than just headings or brief descriptions)" .
+:Document4 :isAboutYears "1998-2002" .
+:Document4 :reviewRelevanceBy "no" .
+:Document4 :discussesSolution "building research centers of  excellence" .
+:Document4 :addressesProblem "lack of critical mass and fragmentation in R&D efforts; insufficient supply of human resources for R&D; lack of coordination between research and training" .
+:Document4 :aboutTopic "Education of engineers" .
+:Document4 :whenToUse "This is a good example of the design, implementation and evaluation of policies to build research centers of excellence, of particular interest to middle and low income countries." .
+
+:Document5 a :Document .
+:Document5 :title "Completion and Results Report (IBRD-71720) on a Loan in the Amount of US$25.26 Million to the Republic of Chile for the Science for the Knowledge Economy Project" .
+:Document5 :publisher "World Bank" .
+:Document5 :documentID "ICR0000491" .
+:Document5 :author "World Bank, Human Development Sector, Argentina, Chile, Paraguay, Uruguay Country Management Unit, Latin America and Caribbean Region" .
+:Document5 :hasKnowledgeBasis "Evidence-based (originating from data and research) , Experience-based (originating from an example or anecdote)" .
+:Document5 :isAboutCountry "Chile" .
+:Document5 :isAboutRegion "Latin America and the Caribbean (LAC)" .
+:Document5 :documentType "World Bank Implementation and Completion Report" .
+:Document5 :includes "Extended text (more than just headings or brief descriptions), Images, Charts or graphs" .
+:Document5 :isAboutYears "2002-2007" .
+:Document5 :reviewRelevanceBy "no" .
+:Document5 :discussesSolution "Centers of exellence, science policy" .
+:Document5 :addressesProblem "insufficient investment in science and technology, inefficient university-industry collaboration and insufficient international linkages" .
+:Document5 :aboutTopic "Public funding" .
+:Document5 :whenToUse "This project is a useful example of how to build a coherent policy strategy and a strong policy framework, in the context of a middle-income country in Latin America. It also illustrates the value of policies to foster public-private linkages and enhance the R&D capacity of firms." .
+
+:Document6 a :Document .
+:Document6 :title "Agricultural Innovation Systems: An Investment Sourcebook" .
+:Document6 :publisher "World Bank" .
+:Document6 :documentID "ISBN (paper): 978-0-8213-8684-2" .
+:Document6 :author "World Bank 2012." .
+:Document6 :hasKnowledgeBasis "Evidence-based (originating from data and research)" .
+:Document6 :isAboutRegion "Africa (AFR)" .
+:Document6 :isAboutRegion "East Asia and the Pacific (EAP)" .
+:Document6 :isAboutRegion "Latin America and the Caribbean (LAC)" .
+:Document6 :isAboutRegion "South Asia (SAR)" .
+:Document6 :documentType "World Bank Knowledge Report" .
+:Document6 :includes "Extended text (more than just headings or brief descriptions), Charts or graphs" .
+:Document6 :reviewRelevanceBy "no" .
+:Document6 :discussesSolution "Good practice guidelines, examples and how to support for incentivizing private sector agricultural innovation." .
+:Document6 :addressesProblem "capacity of firms & risk of firms to innovation, market failure" .
+:Document6 :aboutTopic "Public Policy and Governance" .
+:Document6 :whenToUse "It provides policy makers, innovation and development practitioners how to guidance (instruments, examples, lessons learned) on investing in agricultural innovation system, particularly in terms of how to engage and incentivize private sector led inclusive innovation." .
+:Document6 :hasUri "http://ipp-testing.azri.de/sites/default/files/ippContentPages/dummy.htm" .
+
+:Document7 a :Document .
+:Document7 :title "Agricultural Innovation Systems: An Investment Sourcebook" .
+:Document7 :publisher "World Bank" .
+:Document7 :documentID "ISBN (paper): 978-0-8213-8684-2" .
+:Document7 :author "World Bank 2012." .
+:Document7 :hasKnowledgeBasis "Evidence-based (originating from data and research)" .
+:Document7 :isAboutRegion "Africa (AFR)" .
+:Document7 :isAboutRegion "East Asia and the Pacific (EAP)" .
+:Document7 :isAboutRegion "Latin America and the Caribbean (LAC)" .
+:Document7 :isAboutRegion "South Asia (SAR)" .
+:Document7 :documentType "World Bank Knowledge Report" .
+:Document7 :includes "Extended text (more than just headings or brief descriptions), Charts or graphs" .
+:Document7 :reviewRelevanceBy "no" .
+:Document7 :discussesSolution "Good practice guidelines, examples and how to support for incentivizing private sector agricultural innovation." .
+:Document7 :addressesProblem "capacity of firms & risk of firms to innovation, market failure" .
+:Document7 :aboutTopic "Innovation Networks and Clusters" .
+:Document7 :whenToUse "It provides policy makers, innovation and development practitioners how to guidance (instruments, examples, lessons learned) on investing in agricultural innovation system, particularly in terms of how to engage and incentivize private sector led inclusive innovation." .
+
+:Document8 a :Document .
+:Document8 :title "Agricultural Innovation Systems: An Investment Sourcebook" .
+:Document8 :publisher "World Bank" .
+:Document8 :documentID "ISBN (paper): 978-0-8213-8684-2" .
+:Document8 :author "World Bank 2012." .
+:Document8 :hasKnowledgeBasis "Evidence-based (originating from data and research)" .
+:Document8 :isAboutRegion "Africa (AFR)" .
+:Document8 :isAboutRegion "East Asia and the Pacific (EAP)" .
+:Document8 :isAboutRegion "Latin America and the Caribbean (LAC)" .
+:Document8 :isAboutRegion "South Asia (SAR)" .
+:Document8 :documentType "World Bank Knowledge Report" .
+:Document8 :includes "Extended text (more than just headings or brief descriptions), Charts or graphs" .
+:Document8 :reviewRelevanceBy "no" .
+:Document8 :discussesSolution "Good practice guidelines, examples and how to support for incentivizing private sector agricultural innovation." .
+:Document8 :addressesProblem "capacity of firms & risk of firms to innovation, market failure" .
+:Document8 :aboutTopic "Agriculture and Innovation, Public Policy and Governance, Economic Growth, Competitiveness and Jobs, Inclusive Innovation and Development, Innovative Entrepreneurship, Innovation in Established Firms, Finance for Innovation, Public Sector R&D, Technology Transfer, Commercialisation, Adoption and Diffusion, Innovation Networks and Clusters" .
+:Document8 :whenToUse "It provides policy makers, innovation and development practitioners how to guidance (instruments, examples, lessons learned) on investing in agricultural innovation system, particularly in terms of how to engage and incentivize private sector led inclusive innovation." .
+
+:Document9 a :Document .
+:Document9 :title "Document9" .
+:Document9 :publisher "World Bank" .
+:Document9 :documentID "ISBN (paper): 978-0-8213-8684-2" .
+:Document9 :author "World Bank 2012." .
+:Document9 :hasKnowledgeBasis "Evidence-based (originating from data and research)" .
+:Document9 :isaboutcountry "Chile" .
+:Document9 :isAboutYears "2002-2007" .
+:Document9 :isAboutRegion "Africa (AFR)" .
+:Document9 :isAboutRegion "East Asia and the Pacific (EAP)" .
+:Document9 :isAboutRegion "Latin America and the Caribbean (LAC)" .
+:Document9 :isAboutRegion "South Asia (SAR)" .
+:Document9 :documentType "World Bank Knowledge Report" .
+:Document9 :includes "Extended text (more than just headings or brief descriptions), Charts or graphs" .
+:Document9 :reviewRelevanceBy "01/2013" .
+:Document9 :discussesSolution "Good practice guidelines, examples and how to support for incentivizing private sector agricultural innovation." .
+:Document9 :addressesProblem "capacity of firms & risk of firms to innovation, market failure" .
+:Document9 :aboutTopic "Agriculture and Innovation" .
+:Document9 :whenToUse "It provides policy makers, innovation and development practitioners how to guidance (instruments, examples, lessons learned) on investing in agricultural innovation system, particularly in terms of how to engage and incentivize private sector led inclusive innovation." .
+:Document9 :hasSearchResult "search result should dispaly this content" .
+:Document9 :publicationDate "April 23, 1997" .
+:Document9 :hasGeoScale "Municipal" .
+:Document9 :aboutActor "IMF" .
+:Document9 :aboutOperationalQuestions "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et ".
+:Document9 :otherTag :transnationalCorporations .
+:Document9 :otherTag :unemployment .
+:Document9 :includesFormatType "Images" .
+:Document9 :hasUri "http://ipp-testing.azri.de/ippDocuments/doc9.pdf" .
+:Document9 :hasAbstract "http://ipp-testing.azri.de/sites/default/files/ippContentPages/dummy.htm" .
+:Document9 :hasExecSum "http://ipp-testing.azri.de/sites/default/files/ippContentPages/dummy.htm" .
+:Document9 :isNewinIPP "1" .
+:Document9 :hasIconUri "http://ipp-testing.azri.de/sites/default/files/public_url/home-column-two-icon.png" .
+:Document9 :fragmentStartPage 1 .
+:Document9 :fragmentEndPage 2 .
+
+
+
